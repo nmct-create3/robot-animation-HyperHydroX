@@ -1,0 +1,1 @@
+gsap.to('#robot', {duration: 1, x: 50 });

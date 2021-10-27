@@ -146,11 +146,14 @@ body {
     Component: Robot
 */
 
-.c-robot {
+.c-robot{
   max-width: 300px;
   fill: var(--global-html-color);
+
+}
+
+.c-robot--css-anim {
   animation: robot_hover var(--global-animation);
-  
 }
 
 @keyframes robot_hover {
@@ -163,7 +166,7 @@ body {
   }
 }
 
-.c-robot__shadow {
+.c-robot__shadow{
   fill: var(--c-robot__shadow-fill, black);
   opacity: .1;
   /* animation-name: shadow_pulse;
@@ -172,9 +175,13 @@ body {
   animation-iteration-count: infinite;
   animation-direction: alternate; */
 
+  
+
+}
+
+.c-robot__shadow--css-anim {
   animation: shadow_pulse var(--global-animation);
   transform-origin: 50% 100%;
-
 }
 
 @keyframes shadow_pulse {
