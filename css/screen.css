@@ -15,6 +15,14 @@
   --global-html-color: var(--global-color-front);
   --global-html-backgroundColor: var(--global-color-back);
   --global-selection-backgroundColor: var(--global-color-front);
+
+  /* global animation */
+  --global-animation-scale: .75;
+  --global-animation-duration: .75s;
+  --global-animation-timing-function: ease-in-out;
+  --glboal-animation-iteration-count: infinite;
+  --global-animation-direction: alternate;
+  --global-animation: var(--global-animation-duration) var(--global-animation-timing-function) var(--glboal-animation-iteration-count) var(--global-animation-direction);
 }
 
 /*------------------------------------*\
@@ -141,15 +149,44 @@ body {
 .c-robot {
   max-width: 300px;
   fill: var(--global-html-color);
+  animation: robot_hover var(--global-animation);
+  
+}
+
+@keyframes robot_hover {
+  0%{
+    transform: translateY(2.5%);
+  } 
+
+  100% {
+    transform: translateY(-2.5%);
+  }
 }
 
 .c-robot__shadow {
+  fill: var(--c-robot__shadow-fill, black);
+  opacity: .1;
+  /* animation-name: shadow_pulse;
+  animation-duration: .75s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate; */
+
+  animation: shadow_pulse var(--global-animation);
+  transform-origin: 50% 100%;
+
 }
 
+@keyframes shadow_pulse {
+  100%{
+    transform: scale(var(--global-animation-scale));
+  } 
+}
 
 /*
     Component: Controls
 */
+
 
 /*------------------------------------*\
 #UTILITIES
