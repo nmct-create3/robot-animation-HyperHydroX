@@ -34,6 +34,8 @@ html {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--global-html-backgroundColor);
+  color: var(--global-html-color);
 }
 
 *,
@@ -43,6 +45,10 @@ html {
 }
 
 body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*
@@ -133,6 +139,8 @@ body {
 */
 
 .c-robot {
+  max-width: 300px;
+  fill: var(--global-html-color);
 }
 
 .c-robot__shadow {
