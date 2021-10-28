@@ -34,7 +34,6 @@ btn_normal.onclick = () => tl.timeScale(1);
 btn_slow.onclick = () => tl.timeScale(.5);
 btn_pause.addEventListener("click", () => {
   tl.pause();
-  console.log("click")
   btn_play.classList.remove("o-hide-accessible")
   btn_pause.classList.add("o-hide-accessible")
 })
