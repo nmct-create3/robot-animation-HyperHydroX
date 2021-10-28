@@ -223,7 +223,7 @@ body {
   cursor: pointer;
 }
 
-.c-controls__radio:active + .c-controls__button {
+.c-controls__radio:checked + .c-controls__button {
   background-color: rgba(153, 153, 153, 0.5);
   border-radius: 50px;
 }
