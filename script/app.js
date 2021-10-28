@@ -32,8 +32,18 @@ const btn_pause = btn_controls.querySelector(".c-play-icon--pause")
 btn_fast.onclick = () => tl.timeScale(2);
 btn_normal.onclick = () => tl.timeScale(1);
 btn_slow.onclick = () => tl.timeScale(.5);
-btn_pause.onclick = () => tl.pause();
-btn_play.onclick = () => tl.resume();
+btn_pause.addEventListener("click", () => {
+  tl.pause();
+  console.log("click")
+  btn_play.classList.remove("o-hide-accessible")
+  btn_pause.classList.add("o-hide-accessible")
+})
+
+btn_play.addEventListener("click", () => {
+  tl.resume();
+  btn_pause.classList.remove("o-hide-accessible")
+  btn_play.classList.add("o-hide-accessible")
+})
 
 // ANIMATION
 let tl = gsap.timeline({

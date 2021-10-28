@@ -196,11 +196,39 @@ body {
 .c-controls {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 16px;
 }
 
 .c-controls__list {
   display: flex;
-  margin: 64px;
+}
+
+.c-controls__list .c-controls__button {
+  padding: 8px 14px;
+}
+
+.c-controls__button {
+  padding: 8px;
+  margin: 0 8px;
+  transition: all ease-in-out 0.1s;
+  text-transform: uppercase;
+}
+
+.c-controls__button:hover {
+  background-color: rgba(153, 153, 153, 0.5);
+  border-radius: 50px;
+}
+
+.c-controls__button--pause {
+  display: flex;
+  align-items: center;
+}
+
+.c-controls__button--pause:hover {
+  border-radius: 100%;
 }
 
 /*------------------------------------*\
