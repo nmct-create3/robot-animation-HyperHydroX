@@ -17,12 +17,14 @@
   --global-selection-backgroundColor: var(--global-color-front);
 
   /* global animation */
-  --global-animation-scale: .75;
-  --global-animation-duration: .75s;
+  --global-animation-scale: 0.75;
+  --global-animation-duration: 0.75s;
   --global-animation-timing-function: ease-in-out;
   --glboal-animation-iteration-count: infinite;
   --global-animation-direction: alternate;
-  --global-animation: var(--global-animation-duration) var(--global-animation-timing-function) var(--glboal-animation-iteration-count) var(--global-animation-direction);
+  --global-animation: var(--global-animation-duration)
+    var(--global-animation-timing-function)
+    var(--glboal-animation-iteration-count) var(--global-animation-direction);
 }
 
 /*------------------------------------*\
@@ -55,6 +57,7 @@ html {
 body {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -146,10 +149,9 @@ body {
     Component: Robot
 */
 
-.c-robot{
+.c-robot {
   max-width: 300px;
   fill: var(--global-html-color);
-
 }
 
 .c-robot--css-anim {
@@ -157,26 +159,23 @@ body {
 }
 
 @keyframes robot_hover {
-  0%{
+  0% {
     transform: translateY(2.5%);
-  } 
+  }
 
   100% {
     transform: translateY(-2.5%);
   }
 }
 
-.c-robot__shadow{
+.c-robot__shadow {
   fill: var(--c-robot__shadow-fill, black);
-  opacity: .1;
+  opacity: 0.1;
   /* animation-name: shadow_pulse;
   animation-duration: .75s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-direction: alternate; */
-
-  
-
 }
 
 .c-robot__shadow--css-anim {
@@ -185,15 +184,24 @@ body {
 }
 
 @keyframes shadow_pulse {
-  100%{
+  100% {
     transform: scale(var(--global-animation-scale));
-  } 
+  }
 }
 
 /*
     Component: Controls
 */
 
+.c-controls {
+  display: flex;
+  flex-direction: row;
+}
+
+.c-controls__list {
+  display: flex;
+  margin: 64px;
+}
 
 /*------------------------------------*\
 #UTILITIES
@@ -226,18 +234,18 @@ body {
     text-decoration: underline;
   }
   a[href]:after {
-    content: ' (' attr(href) ')';
+    content: " (" attr(href) ")";
   }
   abbr[title]:after {
-    content: ' (' attr(title) ')';
+    content: " (" attr(title) ")";
   }
   /*
     * Don't show links that are fragment identifiers,
     * or use the `javascript:` pseudo protocol
     */
-  a[href^='#']:after,
-  a[href^='javascript:']:after {
-    content: '';
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
   }
   pre {
     white-space: pre-wrap !important;
