@@ -27,7 +27,6 @@ const btn_controls = document.querySelector(".js-pause");
 const btn_play = btn_controls.querySelector(".c-play-icon--play")
 const btn_pause = btn_controls.querySelector(".c-play-icon--pause")
 
-
 // EVENTS
 btn_fast.onclick = () => tl.timeScale(2);
 btn_normal.onclick = () => tl.timeScale(1);
@@ -91,6 +90,3 @@ tl.to('#Arm-right', {
   rotation: 2.5,
 }, 0);
 
-
-
-//
